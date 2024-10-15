@@ -53,6 +53,9 @@ from mask2former import (
     add_maskformer2_config,
 )
 
+import warnings
+warnings.filterwarnings("ignore", category=FutureWarning)
+
 
 class Trainer(DefaultTrainer):
     """
@@ -316,7 +319,14 @@ def main(args):
 
 
 if __name__ == "__main__":
-    args = default_argument_parser().parse_args()
+    default_args = [
+        "--num-gpus", "1",
+        "--config-file", "configs/ade20k/semantic-segmentation/swin/faseg_swin_large_IN21k_res640_24.yaml",
+        # "--eval-only",
+        "MODEL.WEIGHTS", "model/model_0239999.pth"
+    ]
+    args = default_argument_parser().parse_args(default_args)
+    # args = default_argument_parser().parse_args()
     print("Command Line Args:", args)
     launch(
         main,
