@@ -323,6 +323,7 @@ if __name__ == "__main__":
         "--num-gpus", "1",
         "--config-file", "configs/ade20k/semantic-segmentation/swin/faseg_swin_large_IN21k_res640_24.yaml",
         # "--eval-only",
+        # "INPUT.RANDOM_FLIP.ENABLED", False,
         "MODEL.WEIGHTS", "model/model_0239999.pth"
     ]
     args = default_argument_parser().parse_args(default_args)

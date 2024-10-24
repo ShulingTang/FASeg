@@ -79,7 +79,9 @@ class MaskFormerSemanticDatasetMapper:
             )
         if cfg.INPUT.COLOR_AUG_SSD:
             augs.append(ColorAugSSDTransform(img_format=cfg.INPUT.FORMAT))
-        augs.append(T.RandomFlip())
+
+        # if cfg.INPUT.FLIP.ENABLED and is_train:
+        #     augs.append(T.RandomFlip())
 
         # Assume always applies to the training set.
         dataset_names = cfg.DATASETS.TRAIN

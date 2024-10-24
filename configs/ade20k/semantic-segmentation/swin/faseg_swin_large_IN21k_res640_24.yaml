@@ -35,6 +35,9 @@ INPUT:
     TYPE: "absolute"
     SIZE: (640, 640)
     SINGLE_CATEGORY_MAX_AREA: 1.0
+#  RANDOM_FLIP:
+#    ENABLED: False
+#    NOT_FLIP_LIST: [19, 20, 21, 22, 23]
   COLOR_AUG_SSD: True
   SIZE_DIVISIBILITY: 640  # used in dataset mapper
   FORMAT: "RGB"

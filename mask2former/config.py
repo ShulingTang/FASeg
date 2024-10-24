@@ -112,3 +112,9 @@ def add_maskformer2_config(cfg):
     # Importance sampling parameter for PointRend point sampling during training. Parametr `beta` in
     # the original paper.
     cfg.MODEL.MASK_FORMER.IMPORTANCE_SAMPLE_RATIO = 0.75
+
+    # # add FLIP augmentation
+    # cfg.INPUT.FLIP.ENABLED = True
+    # cfg.INPUT.FLIP.PROB = 0.5
+    # cfg.INPUT.FLIP.TYPE = "horizontal"
+    # cfg.INPUT.FLIP.NOT_FLIP_LIST = []
