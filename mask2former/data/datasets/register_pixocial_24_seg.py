@@ -1,6 +1,6 @@
 import os
 from detectron2.data import DatasetCatalog, MetadataCatalog
-from utils import get_pixocial_dicts
+from mask2former.data.datasets.utils import get_pixocial_dicts
 
 
 _root = os.getenv("DETECTRON2_DATASETS", "datasets")

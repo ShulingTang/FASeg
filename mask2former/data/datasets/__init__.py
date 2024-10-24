@@ -9,4 +9,5 @@ from . import (
     register_mapillary_vistas_panoptic,
     register_pixocial_24_seg,
     register_pixocial_19_seg,
+    register_pixocial_lining_seg,
 )

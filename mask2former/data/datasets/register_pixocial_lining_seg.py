@@ -1,6 +1,6 @@
 import os
 from detectron2.data import DatasetCatalog, MetadataCatalog
-from utils import get_pixocial_dicts
+from mask2former.data.datasets.utils import get_pixocial_dicts
 
 
 _root = os.getenv("DETECTRON2_DATASETS", "datasets")
@@ -32,3 +32,4 @@ for d in ["train", "val"]:
     MetadataCatalog.get(f"pixocial_lining_{d}").set(ignore_label=255)
     MetadataCatalog.get(f"pixocial_lining_{d}").set(image_root=img_root)
     MetadataCatalog.get(f"pixocial_lining_{d}").set(sem_seg_root=gt_root)
+
