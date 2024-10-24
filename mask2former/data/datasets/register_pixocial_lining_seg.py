@@ -23,12 +23,12 @@ for d in ["train", "val"]:
     img_root = f"{_root}/pixocial_lining/{d}_images"
     gt_root = f"{_root}/pixocial_lining/{d}_segmentations"
     DatasetCatalog.register(
-      f"pixocial_24_{d}",
+      f"pixocial_lining_{d}",
       lambda img_dir=img_root, seg_dir=gt_root: get_pixocial_dicts(img_dir, seg_dir)
     )
-    MetadataCatalog.get(f"pixocial_24_{d}").set(stuff_classes=PIXOCIAL_LINING_CLASSES)
-    MetadataCatalog.get(f"pixocial_24_{d}").set(stuff_colors=PIXOCIAL_LINING_COLORS)
-    MetadataCatalog.get(f"pixocial_24_{d}").set(evaluator_type="sem_seg")
-    MetadataCatalog.get(f"pixocial_24_{d}").set(ignore_label=255)
-    MetadataCatalog.get(f"pixocial_24_{d}").set(image_root=img_root)
-    MetadataCatalog.get(f"pixocial_24_{d}").set(sem_seg_root=gt_root)
+    MetadataCatalog.get(f"pixocial_lining_{d}").set(stuff_classes=PIXOCIAL_LINING_CLASSES)
+    MetadataCatalog.get(f"pixocial_lining_{d}").set(stuff_colors=PIXOCIAL_LINING_COLORS)
+    MetadataCatalog.get(f"pixocial_lining_{d}").set(evaluator_type="sem_seg")
+    MetadataCatalog.get(f"pixocial_lining_{d}").set(ignore_label=255)
+    MetadataCatalog.get(f"pixocial_lining_{d}").set(image_root=img_root)
+    MetadataCatalog.get(f"pixocial_lining_{d}").set(sem_seg_root=gt_root)

@@ -82,6 +82,8 @@ class MaskFormerSemanticDatasetMapper:
 
         # if cfg.INPUT.FLIP.ENABLED and is_train:
         #     augs.append(T.RandomFlip())
+        if cfg.INPUT.RANDOM_FLIP is not None and is_train:
+            augs.append(T.RandomFlip())
 
         # Assume always applies to the training set.
         dataset_names = cfg.DATASETS.TRAIN
